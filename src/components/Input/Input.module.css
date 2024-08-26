@@ -1,0 +1,37 @@
+.input_wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.input_icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+  font-size: 18px;
+}
+
+.left_icon {
+  left: 15px;
+}
+
+.right_icon {
+  right: 15px;
+}

@@ -1,0 +1,48 @@
+.sidebar {
+  height: 100%;
+  width: 45%;
+  border-right: 1px solid gray;
+  h2 {
+    margin-left: 20px;
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.search_input {
+  padding: 20px;
+  border-bottom: 1px solid gray;
+}
+.chatItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid gray;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  p {
+    margin: 0 0 0 auto;
+    align-self: start;
+  }
+
+  button {
+    width: fit-content;
+    padding: 5px;
+  }
+}
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: small;
+}
