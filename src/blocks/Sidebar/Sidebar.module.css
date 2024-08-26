@@ -24,8 +24,6 @@
   border-bottom: 1px solid gray;
 
   .info {
-    display: flex;
-    flex-direction: column;
     margin-left: 10px;
   }
 
@@ -38,6 +36,11 @@
     width: fit-content;
     padding: 5px;
   }
+}
+
+.chatItem:hover {
+  cursor: pointer;
+  background-color: lightgray;
 }
 
 .btn_container {

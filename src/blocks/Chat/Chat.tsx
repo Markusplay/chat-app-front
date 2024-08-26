@@ -11,7 +11,7 @@ import styles from './Chat.module.css';
 import io from 'socket.io-client';
 import { useToastStore } from '../../../zustand/toastStore';
 
-const socket = io('http://localhost:8080');
+const socket = io('https://chat-app-api-fjps.onrender.com');
 
 const Chat = () => {
   const { currentChat: chatId } = useStore(store);
@@ -23,12 +23,15 @@ const Chat = () => {
   const [chatInfo, setChatInfo] = useState<IChat>();
 
   useEffect(() => {
-    api.get(`/chats/${chatId}`).then(res => {
-      setChatInfo(res.data);
-    });
+    if (chatId){
+      api.get(`/chats/${chatId}`).then(res => {
+        setChatInfo(res.data);
+      });
+    }
   }, [chatId]);
 
   useEffect(() => {
+    if (!chatId) return;
     api.get(`/chats/${chatId}/messages`).then(res => {
       setMessages(res.data);
     });
@@ -80,7 +83,7 @@ const Chat = () => {
         <br />
         <section className={styles.chat}>
           {sortedMessages.map(message => {
-            const date = formatDate(message.createdAt);
+            const date = formatDate(message.createdAt ?? new Date());
             return (
               <div
                 key={message._id}

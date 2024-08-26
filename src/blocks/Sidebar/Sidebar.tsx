@@ -101,11 +101,11 @@ const Sidebar: FC = () => {
               key={chat._id}
             >
               <Avatar src="" alt="avatar" />
-              <div className="info">
+              <div className={styles.info}>
                 <p>
                   {chat.firstName} {chat.lastName}
                 </p>
-                <p>{chat.messages[chat.messages.length -1].message}</p>
+                <p style={{textOverflow:'ellipsis', overflow:'hidden', whiteSpace:'nowrap', width:'150px'}}>{chat.messages[chat.messages.length -1]?.message}</p>
               </div>
               <div
                 style={{
